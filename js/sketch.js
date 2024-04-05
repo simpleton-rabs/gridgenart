@@ -8,25 +8,25 @@
 
 //   // values for quadrangles coming off left rectangles
 
-//   // let quadXOne = recX + recWidth;
-//   let quadXOne = 210;
-//   // let quadYOne = recY;
-//   let quadYOne = 5;
-//   // let quadXTwo = quadXOne + 100;
-//   let quadXTwo = quadXOne + (2 * recWidth);
-//   // let quadYTwo = quadYOne + 100;
-//   let quadYTwo = quadYOne - recHeight;
+//   // let quadX1 = recX + recWidth;
+//   let quadX1 = 210;
+//   // let quadY1 = recY;
+//   let quadY1 = 5;
+//   // let quadX2 = quadX1 + 100;
+//   let quadX2 = quadX1 + (2 * recWidth);
+//   // let quadY2 = quadY1 + 100;
+//   let quadY2 = quadY1 - recHeight;
   
-//   // quadXTwo = quadXOne + (2 * recWidth);
-//   // quadYTwo = quadYOne - recWidth;
+//   // quadX2 = quadX1 + (2 * recWidth);
+//   // quadY2 = quadY1 - recWidth;
   
   
-//   let quadXThree = quadXTwo;
-//   // let quadYThree = quadYTwo + 100;
-//   let quadYThree = quadYOne;
-//   let quadXFour = quadXOne;
-//   let quadYFour = quadYOne + recHeight;
-//   // let quadYFour = quadYOne + recHeight;
+//   let quadX3 = quadX2;
+//   // let quadY3 = quadY2 + 100;
+//   let quadY3 = quadY1;
+//   let quadX4 = quadX1;
+//   let quadY4 = quadY1 + recHeight;
+//   // let quadY4 = quadY1 + recHeight;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -51,72 +51,91 @@ let recY = 5;
   // values for quadrangles coming off left rectangles
 
   // quad values with integer
-  // let quadXOne = 210;
-  // let quadYOne = 5;
-  // let quadXTwo = 410;
-  // let quadYTwo = -95;
-  // let quadXThree = 410;
-  // let quadYThree = 5;
-  // let quadXFour = 210;
-  // let quadYFour = 105;
+  // let quadX1 = 210;
+  // let quadY1 = 5;
+  // let quadX2 = 410;
+  // let quadY2 = -95;
+  // let quadX3 = 410;
+  // let quadY3 = 5;
+  // let quadX4 = 210;
+  // let quadY4 = 105;
 
-  let quadXOne = recX + recWidth + 20;
-//   let quadXOne = 210;
-  let quadYOne = recY;
-//   let quadYOne = 5;
-  // let quadXTwo = quadXOne + 100;
-  let quadXTwo = quadXOne + (2 * recWidth);
-//   // let quadYTwo = quadYOne + 100;
-  let quadYTwo = quadYOne - recHeight;
+  let quadX1 = recX + recWidth + 20;
+//   let quadX1 = 210;
+  let quadY1 = recY;
+//   let quadY1 = 5;
+  // let quadX2 = quadX1 + 100;
+  let quadX2 = quadX1 + (2 * recWidth);
+//   // let quadY2 = quadY1 + 100;
+  let quadY2 = quadY1 - recHeight;
   
-//   // quadXTwo = quadXOne + (2 * recWidth);
-//   // quadYTwo = quadYOne - recWidth;
+//   // quadX2 = quadX1 + (2 * recWidth);
+//   // quadY2 = quadY1 - recWidth;
   
   
-  let quadXThree = quadXTwo;
-//   // let quadYThree = quadYTwo + 100;
-  let quadYThree = quadYOne;
-  let quadXFour = quadXOne;
-  let quadYFour = quadYOne + recHeight;
-//   // let quadYFour = quadYOne + recHeight;
+  let quadX3 = quadX2;
+//   // let quadY3 = quadY2 + 100;
+  let quadY3 = quadY1;
+  let quadX4 = quadX1;
+  let quadY4 = quadY1 + recHeight;
+//   // let quadY4 = quadY1 + recHeight;
 
   // background(220);
   // rect (0, 0, recWidth, height);
+
+  let nquadX1 = quadX2 +20;
+//   let quadX1 = 210;
+  let nquadY1 = quadY2;
+//   let quadY1 = 5;
+  // let quadX2 = quadX1 + 100;
+  let nquadX2 = nquadX1 + (3.5 * recWidth);
+//   // let quadY2 = quadY1 + 100;
+  let nquadY2 = nquadY1 - recHeight;
+  
+//   // quadX2 = quadX1 + (2 * recWidth);
+//   // quadY2 = quadY1 - recWidth;
+  
+  
+  let nquadX3 = nquadX2;
+//   // let quadY3 = quadY2 + 100;
+  let nquadY3 = nquadY1;
+  let nquadX4 = quadX3 +20;
+  let nquadY4 = quadY3;
   
   noStroke();
   
   while (recY < height){
    rect(recX, recY, recWidth, recHeight, 5);
-      // quad(quadXOne, quadYOne, quadXTwo, quadYTwo, quadXThree, quadYThree, quadXFour, quadYFour);
+      // quad(quadX1, quadY1, quadX2, quadY2, quadX3, quadY3, quadX4, quadY4);
     
     recY += recHeight + 5;
-    // quadYOne += recHeight;
+    // quadY1 += recHeight;
     
-    // quadXOne += recHeight;
-    // quadYOne += recHeight; 
+    // quadX1 += recHeight;
+    // quadY1 += recHeight; 
     
       }
 
 for (let i = 0; i < 10; i++){
-      quad(quadXOne, quadYOne, quadXTwo, quadYTwo, quadXThree, quadYThree, quadXFour, quadYFour);
-      quadYOne += recHeight + 5;
-      quadYTwo += recHeight + 5;
-      quadYThree += recHeight + 5;
-      quadYFour += recHeight + 5;
+      quad(quadX1, quadY1, quadX2, quadY2, quadX3, quadY3, quadX4, quadY4);
+      quadY1 += recHeight + 5;
+      quadY2 += recHeight + 5;
+      quadY3 += recHeight + 5;
+      quadY4 += recHeight + 5;
       }     
      
-      // for (let i = 0; i < 10; i++){
-        quad(quadXOne + quadXTwo, quadYOne + quadYTwo, quadXTwo , quadYTwo, quadXThree, quadYThree, quadXFour, quadYFour);
-        // quadYOne += recHeight + 5;
-        // quadYTwo += recHeight + 5;
-        // quadYThree += recHeight + 5;
-        // quadYFour += recHeight + 5;
-        // }
-      // quadYOne + recHeight;
-      // quadYTwo = quadYOne - recHeight;
-      // quadYThree = quadYOne;
-      // quadYFour = quadYOne + recHeight;
-      // quad(quadXOne, quadYOne, quadXTwo, quadYTwo, quadXThree, quadYThree, quadXFour, quadYFour);
+      for (let i = 0; i < 10; i++){
+        quad(nquadX1, nquadY1, nquadX2 , nquadY2, nquadX3, nquadY3, nquadX4, nquadY4);
+        nquadY1 += recHeight + 5;
+        nquadY2 += recHeight + 5;
+        nquadY3 += recHeight + 5;
+        nquadY4 += recHeight + 5;
+        }
+      // quadY1 + recHeight;
+      // quadY2 = quadY1 - recHeight;
+      // quadY3 = quadY1;
+      // quadY4 = quadY1 + recHeight;
+      // quad(quadX1, quadY1, quadX2, quadY2, quadX3, quadY3, quadX4, quadY4);
   // strokeWeight(50);
   
   
