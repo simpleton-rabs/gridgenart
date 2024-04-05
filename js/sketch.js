@@ -40,6 +40,9 @@ function setup() {
 
 function draw() {
 
+const colours = [black, red, blue];
+const textColours = [ ];
+let colourIndex;
 //values for rectangles on left side
 let recWidth = 200;
 let recHeight = 100;
@@ -103,11 +106,14 @@ let recY = 5;
   let nquadY4 = quadY3;
   
   noStroke();
+
+  //coloursIndex = random(colours.length);
   
   while (recY < height){
    rect(recX, recY, recWidth, recHeight, 5);
       // quad(quadX1, quadY1, quadX2, quadY2, quadX3, quadY3, quadX4, quadY4);
-    
+    // fill(colours[index]);
+    // index +=1;
     recY += recHeight + 5;
     // quadY1 += recHeight;
     
@@ -139,4 +145,8 @@ for (let i = 0; i < 10; i++){
   // strokeWeight(50);
   
   
+}
+
+function colour(){
+
 }
