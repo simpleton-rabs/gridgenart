@@ -1,48 +1,16 @@
-// //values for rectangles on left side
-// let recWidth = 200;
-// let recHeight = 100;
-// // const recHeightDiv = 15;
-// // const recWidthDiv = 9;
-// let recX = 5;
-// let recY = 5;
-
-//   // values for quadrangles coming off left rectangles
-
-//   // let quadX1 = recX + recWidth;
-//   let quadX1 = 210;
-//   // let quadY1 = recY;
-//   let quadY1 = 5;
-//   // let quadX2 = quadX1 + 100;
-//   let quadX2 = quadX1 + (2 * recWidth);
-//   // let quadY2 = quadY1 + 100;
-//   let quadY2 = quadY1 - recHeight;
-  
-//   // quadX2 = quadX1 + (2 * recWidth);
-//   // quadY2 = quadY1 - recWidth;
-  
-  
-//   let quadX3 = quadX2;
-//   // let quadY3 = quadY2 + 100;
-//   let quadY3 = quadY1;
-//   let quadX4 = quadX1;
-//   let quadY4 = quadY1 + recHeight;
-//   // let quadY4 = quadY1 + recHeight;
-
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(0);
-  //have to set here after canvas is declared
-  // recWidth = width / recWidthDiv;
-  // recHeight = height / recHeightDiv;
+
 }
-
-
 
 function draw() {
 
-const colours = [black, red, blue];
-const textColours = [ ];
-let colourIndex;
+const colours = ['black', 'red', 'navy', 'orange', 'green', 'yellow', 'white'];
+
+// const textColours = [ ];
+// let colourIndex = 0;
+let coloursIndex = 0;
 //values for rectangles on left side
 let recWidth = 200;
 let recHeight = 100;
@@ -50,18 +18,6 @@ let recHeight = 100;
 // const recWidthDiv = 9;
 let recX = 5;
 let recY = 5;
-
-  // values for quadrangles coming off left rectangles
-
-  // quad values with integer
-  // let quadX1 = 210;
-  // let quadY1 = 5;
-  // let quadX2 = 410;
-  // let quadY2 = -95;
-  // let quadX3 = 410;
-  // let quadY3 = 5;
-  // let quadX4 = 210;
-  // let quadY4 = 105;
 
   let quadX1 = recX + recWidth + 20;
 //   let quadX1 = 210;
@@ -86,7 +42,7 @@ let recY = 5;
   // background(220);
   // rect (0, 0, recWidth, height);
 
-  let nquadX1 = quadX2 +20;
+  let nquadX1 = quadX2 + 20;
 //   let quadX1 = 210;
   let nquadY1 = quadY2;
 //   let quadY1 = 5;
@@ -102,7 +58,7 @@ let recY = 5;
   let nquadX3 = nquadX2;
 //   // let quadY3 = quadY2 + 100;
   let nquadY3 = nquadY1;
-  let nquadX4 = quadX3 +20;
+  let nquadX4 = quadX3 + 20;
   let nquadY4 = quadY3;
   
   noStroke();
@@ -110,10 +66,17 @@ let recY = 5;
   //coloursIndex = random(colours.length);
   
   while (recY < height){
-   rect(recX, recY, recWidth, recHeight, 5);
+   
+      // coloursIndex = random(colours.length);
+      // fill(colours[coloursIndex]);
+      // coloursIndex += 1;
+
+      fill(random(colours));
+   
+    rect(recX, recY, recWidth, recHeight, 5);
       // quad(quadX1, quadY1, quadX2, quadY2, quadX3, quadY3, quadX4, quadY4);
-    // fill(colours[index]);
-    // index +=1;
+    
+    
     recY += recHeight + 5;
     // quadY1 += recHeight;
     
@@ -147,6 +110,6 @@ for (let i = 0; i < 10; i++){
   
 }
 
-function colour(){
+// function colour(){
 
-}
+// }
