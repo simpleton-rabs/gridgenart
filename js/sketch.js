@@ -1,3 +1,9 @@
+let font;
+function preload() {
+  font = loadFont('../font/Pangolin-Regular.ttf');
+}
+
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(0);
@@ -82,9 +88,9 @@ let recY = 5;
       coloursIndex += 1
       }   
 
-      textFont('Pangolin', 30);
+      textFont('Pangolin-Regular', 30);
       textAlign(CENTER);
-      text( random(words), recWidth/2, recHeight/2);
+      text( random(words), recWidth/2, recY);
 
       // fill(random(colours));
    
