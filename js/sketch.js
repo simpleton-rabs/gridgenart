@@ -1,15 +1,18 @@
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(0);
-
+  noLoop();
 }
 
 function draw() {
-
+//array for colours
 const colours = ['black', 'red', 'navy', 'orange', 'green', 'yellow', 'white'];
+// array for words
+const words = ['WORD1','WORD2', 'WORD3', 'WORD4', 'WORD5'];
 
 // const textColours = [ ];
 // let colourIndex = 0;
+
 let coloursIndex = 0;
 //values for rectangles on left side
 let recWidth = 200;
@@ -64,14 +67,26 @@ let recY = 5;
   noStroke();
 
   //coloursIndex = random(colours.length);
-  
-  while (recY < height){
-   
-      // coloursIndex = random(colours.length);
-      // fill(colours[coloursIndex]);
-      // coloursIndex += 1;
 
-      fill(random(colours));
+        coloursIndex = round (random(colours.length - 1));
+  
+        console.log(coloursIndex);
+
+  while (recY < height){
+    
+    if (coloursIndex == (colours.length - 1)){
+        fill(colours[coloursIndex])
+        coloursIndex = 0
+      } else{
+      fill(colours[coloursIndex])
+      coloursIndex += 1
+      }   
+
+      textFont('Pangolin', 30);
+      textAlign(CENTER);
+      text( random(words), recWidth/2, recHeight/2);
+
+      // fill(random(colours));
    
     rect(recX, recY, recWidth, recHeight, 5);
       // quad(quadX1, quadY1, quadX2, quadY2, quadX3, quadY3, quadX4, quadY4);
