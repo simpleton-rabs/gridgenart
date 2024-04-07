@@ -90,7 +90,7 @@ let recY = 5;
 
       textFont('Pangolin-Regular', 30);
       textAlign(CENTER);
-      text( random(words), recWidth/2, recY);
+      text( random(words), recWidth/2, recY - (recHeight/2));
 
       // fill(random(colours));
    
