@@ -87,8 +87,9 @@ let recY = 5;
       fill(colours[coloursIndex])
       coloursIndex += 1
       }   
-
-      textFont('Pangolin-Regular', 30);
+      // textFont('Pangolin-Regular', 30);
+      
+      textFont('Pangolin', 30);
       textAlign(CENTER);
       text( random(words), recWidth/2, recY - (recHeight/2));
 
