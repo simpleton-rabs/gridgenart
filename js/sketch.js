@@ -52,12 +52,13 @@ function draw() {
   //top left coordinate of first square 
   let recX = 5;
   let recY = 5;
+  let textY = recY;
 
   //values for middle quadrangle
   //first coordinate to be next to top right of squares
   let quadX1 = recX + recWidth + 20;
   let quadY1 = recY;
-  //second third coordinates to make quadrangle right side appear distance twice width of retangle but same height of rectangles 
+  //second third coordinates to make quadrangle right side appear distance twice width of rectangle but same height of rectangles 
   let quadX2 = quadX1 + 2 * recWidth;
   let quadY2 = quadY1 - recHeight;
   let quadX3 = quadX2;
@@ -95,12 +96,13 @@ function draw() {
   }
 
   // textFont('Pangolin-Regular', 30);
-  while (recY < height) {
+  while (textY < height) {
     textFont("Pangolin", 30);
     textAlign(CENTER);
-    text(random(words), recWidth / 2, recY + recHeight / 2);
-    recY += recHeight + 5;
+    text(random(words), recWidth / 2, textY + recHeight / 2);
+    textY += recHeight + 5;
   }
+
   for (let i = 0; i < 10; i++) {
     quad(quadX1, quadY1, quadX2, quadY2, quadX3, quadY3, quadX4, quadY4);
     quadY1 += recHeight + 5;
