@@ -187,7 +187,7 @@ function draw() {
     nquadY3 += recHeight + 5;
     nquadY4 += recHeight + 5;
 
-    // textAlign(LEFT);
+    // textAlign(RIGHT);
     if (phrases2Index == phrases2.length - 1) {
       rotate(15);
       text(phrases2[phrases2Index], phrases2X, phrases2Y);
@@ -200,7 +200,7 @@ function draw() {
       phrases2Index += 1;
     }
     phrases2Y += recHeight;
-    // phrases2X += 20;
+    phrases2X += 0;
   }
 
   function colourChoose() {
