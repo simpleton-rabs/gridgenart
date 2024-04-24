@@ -3,6 +3,7 @@ function setup() {
   angleMode(DEGREES);
   background(0);
   noLoop();
+   textFont("Pangolin", 30);
 }
 
 function draw() {
@@ -71,7 +72,7 @@ function draw() {
     "YOU'RE ENTERTAINED",
     "I WON'T BE AFRAID",
     "LOST WITHOUT YOU",
-    "THE QUICK BROWN FOX",
+    "THE QUICK BROWN FOX"
   ];
 
   let phrases1Index = round(random(phrases1.length - 1));
@@ -95,13 +96,16 @@ function draw() {
     "YOU'RE ENTERTAINED",
     "I WON'T BE AFRAID",
     "LOST WITHOUT YOU",
-    "THE QUICK BROWN FOX",
+    "THE QUICK BROWN FOX"
   ];
 
   let phrases2Index = round(random(phrases2.length - 1));
   // console.log(phrases1Index);
   let phrases2X = nquadX1 + 10;
-  let phrases2Y = nquadY1 - recHeight / 4;
+  let phrases2Y = nquadY1 + recHeight;
+
+  // let phrases2X = 10;
+  // let phrases2Y = recHeight / 4;
 
   noStroke();
 
@@ -116,7 +120,7 @@ function draw() {
     // drawn square with colour from colours array
     rect(recX, recY, recWidth, recHeight, 5);
     //text to appear on rectangles - if text moved up one rectangle height - it will affectively take colour of following rectangle and will be visible
-    textFont("Pangolin", 30);
+    // textFont("Pangolin", 30);
     textAlign(CENTER);
     //if statement like colours index to check if words index on last array item
     if (wordsIndex == words.length - 1) {
@@ -138,6 +142,12 @@ function draw() {
     quadY2 += recHeight + 5;
     quadY3 += recHeight + 5;
     quadY4 += recHeight + 5;
+    
+        quad(nquadX1, nquadY1, nquadX2, nquadY2, nquadX3, nquadY3, nquadX4, nquadY4);
+    nquadY1 += recHeight + 5;
+    nquadY2 += recHeight + 5;
+    nquadY3 += recHeight + 5;
+    nquadY4 += recHeight + 5;
 
     textAlign(LEFT);
     if (phrases1Index == phrases1.length - 1) {
@@ -155,6 +165,33 @@ function draw() {
     phrases1X -= 20;
   }
 
+
+  for (let i = 0; i < 10; i++) {
+  
+    colourChoose(coloursIndex);
+    // quad(nquadX1, nquadY1, nquadX2, nquadY2, nquadX3, nquadY3, nquadX4, nquadY4);
+    // nquadY1 += recHeight + 5;
+    // nquadY2 += recHeight + 5;
+    // nquadY3 += recHeight + 5;
+    // nquadY4 += recHeight + 5;
+    // resetMatrix();
+    textAlign(LEFT);
+    // translate(nquadX1, nquadX2);4
+    if (phrases2Index == phrases2.length - 1) {
+      rotate(5);
+      text(phrases2[phrases2Index], phrases2X, phrases2Y);
+      // resetMatrix();
+      phrases2Index = 0;
+    } else {
+      rotate(5);
+      text(phrases2[phrases2Index], phrases2X, phrases2Y);
+      // resetMatrix();
+      phrases2Index += 1;
+    }
+    phrases2Y += recHeight;
+    // phrases2X += 20;
+  }
+// resetMatrix();
   // fill(black);
   // textAlign(LEFT);
   // translate(recWidth + 5, 0);
@@ -169,40 +206,8 @@ function draw() {
 
   // }
 
-  for (let i = 0; i < 10; i++) {
-    colourChoose(coloursIndex);
-    quad(
-      nquadX1,
-      nquadY1,
-      nquadX2,
-      nquadY2,
-      nquadX3,
-      nquadY3,
-      nquadX4,
-      nquadY4
-    );
 
-    nquadY1 += recHeight + 5;
-    nquadY2 += recHeight + 5;
-    nquadY3 += recHeight + 5;
-    nquadY4 += recHeight + 5;
-
-    // textAlign(RIGHT);
-    if (phrases2Index == phrases2.length - 1) {
-      rotate(15);
-      text(phrases2[phrases2Index], phrases2X, phrases2Y);
-      resetMatrix();
-      phrases2Index = 0;
-    } else {
-      rotate(15);
-      text(phrases2[phrases2Index], phrases2X, phrases2Y);
-      resetMatrix();
-      phrases2Index += 1;
-    }
-    phrases2Y += recHeight;
-    phrases2X += 0;
-  }
-
+ 
   function colourChoose() {
     //check if colours index is on last array item
     if (coloursIndex == colours.length - 1) {
@@ -215,7 +220,7 @@ function draw() {
       coloursIndex += 1;
     }
   }
-}
+} 
 
 // let nquadX1 = quadX2 + 20;
 // let nquadY1 = quadY2;
