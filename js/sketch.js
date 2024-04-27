@@ -178,18 +178,18 @@ function draw() {
     textAlign(LEFT);
     // translate(nquadX1, nquadX2);4
     if (phrases2Index == phrases2.length - 1) {
-      rotate(5);
+      rotate(7);
       text(phrases2[phrases2Index], phrases2X, phrases2Y);
-      // resetMatrix();
+      resetMatrix();
       phrases2Index = 0;
     } else {
-      rotate(5);
+      rotate(7);
       text(phrases2[phrases2Index], phrases2X, phrases2Y);
-      // resetMatrix();
+      resetMatrix();
       phrases2Index += 1;
     }
     phrases2Y += recHeight;
-    // phrases2X += 20;
+    phrases2X += 15;
   }
 // resetMatrix();
   // fill(black);
