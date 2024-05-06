@@ -1,3 +1,7 @@
+// function preLoad{
+//   textFont("Pangolin", 30);
+// }
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
   angleMode(DEGREES);
@@ -23,14 +27,10 @@ function draw() {
 
   // array for words
   const words = [
-    "ALT",
     "WONDEROUS",
     "BECOME",
     "HALO",
-    "PS.JS",
     "AOHELL",
-    "ACADEMIC",
-    "AI",
     "LUNAR",
     "LOSS",
     "STRONG",
@@ -38,8 +38,14 @@ function draw() {
     "ENTERTAIN",
     "CHANGE",
     "SOCIAL",
-    "ART",
-    "GENERATIVE",
+    "ARTSY",
+    "GENERATE",
+    "MASKED",
+    "SPACE",
+    "BRIGHT",
+    "AMONGST",
+    "BEAUTEOUS",
+    "JOY"
   ];
 
   //index for words - set to random number
@@ -91,12 +97,13 @@ function draw() {
   let nquadY4 = quadY3;
 
   const phrases2 = [
-    "PARTING THE WAVES",
-    "BEING THE BEST I CAN",
-    "YOU'RE ENTERTAINED",
-    "I WON'T BE AFRAID",
-    "LOST WITHOUT YOU",
-    "THE QUICK BROWN FOX"
+    "THERE THERE",
+    "A ROADMAP TO NO WHERE",
+    "I WANTED TO BE FREE OF THE NEGATIVITY",
+    "YOU ARE NOW CROWNED",
+    "KING OF ALL MY GHOSTS",
+    "YOU ARE THE NIGHT AND I AM THE SUN",
+    
   ];
 
   let phrases2Index = round(random(phrases2.length - 1));
