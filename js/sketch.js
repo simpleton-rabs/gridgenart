@@ -2,16 +2,14 @@
 //   textFont("Pangolin", 30);
 // }
 
-function preload() {
-  textFont("Pangolin", 30);
- }
+
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
   angleMode(DEGREES);
   background(0);
   noLoop();
-  //  textFont("Pangolin", 30);
+   textFont("Pangolin", 30);
 }
 
 function draw() {
