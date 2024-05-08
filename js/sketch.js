@@ -1,14 +1,9 @@
-// function preload() {
-//   textFont("Pangolin", 30);
-// }
-
-
-
 function setup() {
   createCanvas(windowWidth, windowHeight);
   angleMode(DEGREES);
   background(0);
-  noLoop();
+  // noLoop();
+  frameRate(2);
    textFont("Pangolin", 30);
 }
 
@@ -17,43 +12,19 @@ function draw() {
   const colours = [
     "black",
     "red",
+    "yellow",
     "navy",
     "orange",
+    "black",
     "green",
-    "yellow",
     "white",
+    "grey"
   ];
 
   //index for colours array set to random number
   let coloursIndex = round(random(colours.length - 1));
 
-  // array for words
-  const words = [
-    "WONDEROUS",
-    "BECOME",
-    "HALO",
-    "AOHELL",
-    "LUNAR",
-    "LOSS",
-    "STRONG",
-    "KITKAT",
-    "ENTERTAIN",
-    "CHANGE",
-    "SOCIAL",
-    "ARTSY",
-    "GENERATE",
-    "MASKED",
-    "SPACE",
-    "BRIGHT",
-    "AMONGST",
-    "BEAUTEOUS",
-    "JOY"
-  ];
-
-  //index for words - set to random number
-  let wordsIndex = round(random(words.length - 1));
-
-  //values for rectangles on left side
+  //values for rectangles on left side - will have words in them
   //set width and height of rectangles
   let recWidth = 200;
   let recHeight = 100;
@@ -61,7 +32,29 @@ function draw() {
   let recX = 5;
   let recY = 5;
 
-  //values for middle quadrangle
+  // array for words
+  const words = [
+    "WONDEROUS",
+    "BECOME",
+    "AOHELL",
+    "LUNAR",
+    "RGB",
+    "STRONG",
+    "KITKAT",
+    "ENTERTAIN",
+    "CHANGE",
+    "SOCIAL",
+    "ARTSY",
+    "SPACE",
+    "BEAUTEOUS",
+    "JOY",
+    "ROYGBIV"
+  ];
+
+  //index for words - set to random number on load
+  let wordsIndex = round(random(words.length - 1));
+
+  //values for middle quadrangle - where first set of phrases will appear
   //first coordinate to be next to top right of rectangles
   let quadX1 = recX + recWidth + 20;
   let quadY1 = recY;
@@ -74,21 +67,32 @@ function draw() {
   let quadX4 = quadX1;
   let quadY4 = quadY1 + recHeight;
 
+  //array for first set of phrases
   const phrases1 = [
     "PARTING THE WAVES",
     "BEING THE BEST I CAN",
     "YOU'RE ENTERTAINED",
     "I WON'T BE AFRAID",
     "LOST WITHOUT YOU",
-    "THE QUICK BROWN FOX"
+    "THE QUICK BROWN FOX",
+    "FOCUS POCUS",
+    "MY REMOTE CONTROL LIFE",
+    "YOUR WAY IS NEVER LOST",
+    "THERE THERE",
+    "A ROADMAP TO NO WHERE",
+    "HASHTAG SYMPATHY",
+    "GROWTH MINDSET",
+    "BLUE SKY THINKING",
+    "EVERYTHING IS A RAINBOW"
   ];
 
+  //index for first set of phrases - set to random number on load
   let phrases1Index = round(random(phrases1.length - 1));
-  // console.log(phrases1Index);
+  //coordinates for first set of phrases
   let phrases1X = quadX1;
   let phrases1Y = quadY1 + recHeight / 4;
 
-  //values for right quadrangles
+  //values for right quadrangles - where 2nd set of pharses will appear
   let nquadX1 = quadX2 + 20;
   let nquadY1 = quadY2;
   let nquadX2 = nquadX1 + 3.5 * recWidth;
@@ -98,30 +102,30 @@ function draw() {
   let nquadX4 = quadX3 + 20;
   let nquadY4 = quadY3;
 
+  //array for 2nd set of phrases
   const phrases2 = [
-    "THERE THERE",
-    "A ROADMAP TO NO WHERE",
     "I WANTED TO BE FREE OF THE NEGATIVITY",
     "YOU ARE NOW CROWNED",
     "KING OF ALL MY GHOSTS",
     "YOU ARE THE NIGHT AND I AM THE SUN",
-    
+    "THE OTHER LIFE BEYOND THE NINE TO FIVE",
+    "RADIATION MOVES IN CONCENTRIC SPHERES",
+    "SOULS HEARTS MINDS ENTWINED",
+    "BETWEEN EAST ANGLIA AND EAST LONDON",
+    "DO YOU SEE RED OR DO YOU SEE GREEN?",
+    "OR SOMETHING INBETWEEN SHORTSIGHTED MAN"   
   ];
 
+  // index for 2nd set of phrases - set to random number on load
   let phrases2Index = round(random(phrases2.length - 1));
-  // console.log(phrases1Index);
+  //coordinates for 2nd set of phrases
   let phrases2X = nquadX1 + 10;
   let phrases2Y = nquadY1 + recHeight;
-
-  // let phrases2X = 10;
-  // let phrases2Y = recHeight / 4;
 
   noStroke();
 
   //draw left hand squares with words on top
   //colours and words chosen at randome from arrays to interate sequentially
-
-  // while (recY < height) {
 
   for (let i = 0; i < 10; i++) {
     //call function to choose colour
@@ -129,7 +133,6 @@ function draw() {
     // drawn square with colour from colours array
     rect(recX, recY, recWidth, recHeight, 5);
     //text to appear on rectangles - if text moved up one rectangle height - it will affectively take colour of following rectangle and will be visible
-    // textFont("Pangolin", 30);
     textAlign(CENTER);
     //if statement like colours index to check if words index on last array item
     if (wordsIndex == words.length - 1) {
@@ -139,25 +142,23 @@ function draw() {
       text(words[wordsIndex], recWidth / 2, recY - recHeight / 2);
       wordsIndex += 1;
     }
-
     //increment the y coordinate as this will move both rectangles and text
     recY += recHeight + 5;
   }
 
+  //draw both quadrangles
   for (let i = 0; i < 10; i++) {
+    //choose colour
     colourChoose(coloursIndex);
+    //draw middle quadrangles
     quad(quadX1, quadY1, quadX2, quadY2, quadX3, quadY3, quadX4, quadY4);
+    //increment y values set next loop will draw underneath
     quadY1 += recHeight + 5;
     quadY2 += recHeight + 5;
     quadY3 += recHeight + 5;
     quadY4 += recHeight + 5;
-    
-        quad(nquadX1, nquadY1, nquadX2, nquadY2, nquadX3, nquadY3, nquadX4, nquadY4);
-    nquadY1 += recHeight + 5;
-    nquadY2 += recHeight + 5;
-    nquadY3 += recHeight + 5;
-    nquadY4 += recHeight + 5;
 
+    //text from phrases 1 array - placed so that colour from bottom quadragle is used so that it can be seen
     textAlign(LEFT);
     if (phrases1Index == phrases1.length - 1) {
       rotate(-15);
@@ -172,18 +173,29 @@ function draw() {
     }
     phrases1Y += recHeight;
     phrases1X -= 20;
+
+
+    //call colour function again so that right adjacent quadrangles aren't the same colour
+    colourChoose(coloursIndex);
+    
+    //draw right quadrangles
+    quad(nquadX1, nquadY1, nquadX2, nquadY2, nquadX3, nquadY3, nquadX4, nquadY4);
+  //increment y values set next loop will draw underneath
+    nquadY1 += recHeight + 5;
+    nquadY2 += recHeight + 5;
+    nquadY3 += recHeight + 5;
+    nquadY4 += recHeight + 5;
+
+
   }
 
 
   for (let i = 0; i < 10; i++) {
-  
+
+
     colourChoose(coloursIndex);
-    // quad(nquadX1, nquadY1, nquadX2, nquadY2, nquadX3, nquadY3, nquadX4, nquadY4);
-    // nquadY1 += recHeight + 5;
-    // nquadY2 += recHeight + 5;
-    // nquadY3 += recHeight + 5;
-    // nquadY4 += recHeight + 5;
-    // resetMatrix();
+
+
     textAlign(LEFT);
     // translate(nquadX1, nquadX2);4
     if (phrases2Index == phrases2.length - 1) {
@@ -199,6 +211,14 @@ function draw() {
     }
     phrases2Y += recHeight;
     phrases2X += 15;
+
+    // quad(nquadX1, nquadY1, nquadX2, nquadY2, nquadX3, nquadY3, nquadX4, nquadY4);
+    // nquadY1 += recHeight + 5;
+    // nquadY2 += recHeight + 5;
+    // nquadY3 += recHeight + 5;
+    // nquadY4 += recHeight + 5;
+    // resetMatrix();
+
   }
 // resetMatrix();
   // fill(black);
