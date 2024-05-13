@@ -2,13 +2,12 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   angleMode(DEGREES);
   background(0);
-  // noLoop();
-  frameRate(2);
+  frameRate(0.5);
    textFont("Pangolin", 30);
 }
 
 function draw() {
-  //array for colours
+  //array for colours as don't want it to be truly random
   const colours = [
     "black",
     "red",
@@ -21,7 +20,7 @@ function draw() {
     "grey"
   ];
 
-  //index for colours array set to random number
+  //index for colours array set to random point in array
   let coloursIndex = round(random(colours.length - 1));
 
   //values for rectangles on left side - will have words in them
@@ -92,7 +91,7 @@ function draw() {
   let phrases1X = quadX1;
   let phrases1Y = quadY1 + recHeight / 4;
 
-  //values for right quadrangles - where 2nd set of pharses will appear
+  //values for right quadrangles - where 2nd set of phrases will appear
   let nquadX1 = quadX2 + 20;
   let nquadY1 = quadY2;
   let nquadX2 = nquadX1 + 3.5 * recWidth;
@@ -130,7 +129,7 @@ function draw() {
   for (let i = 0; i < 10; i++) {
     //call function to choose colour
     colourChoose(coloursIndex);
-    // drawn square with colour from colours array
+    // draw square with colour from colours array
     rect(recX, recY, recWidth, recHeight, 5);
     //text to appear on rectangles - if text moved up one rectangle height - it will affectively take colour of following rectangle and will be visible
     textAlign(CENTER);
@@ -174,7 +173,6 @@ function draw() {
     phrases1Y += recHeight;
     phrases1X -= 20;
 
-
     //call colour function again so that right adjacent quadrangles aren't the same colour
     colourChoose(coloursIndex);
     
@@ -185,6 +183,8 @@ function draw() {
     nquadY2 += recHeight + 5;
     nquadY3 += recHeight + 5;
     nquadY4 += recHeight + 5;
+
+
 
 
   }
