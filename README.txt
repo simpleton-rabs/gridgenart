@@ -1,0 +1,7 @@
+Based on cover art for CD single ‘There There’ by Radiohead - grid based on Hollywood roadmap with text from signs - I don’t know if I have gone off on a tangent as it’s more text than shapes so not sure if it meets the brief.  
+
+I would’ve liked more time to try to do it justice or even start something new but have run out of time.  
+
+Need to learn more on how rotation works in P5, couldn’t work out how to rotate objects without it drifting more and more left or right with each loop (tried to transform to compensate but couldn’t get it working. ) 
+
+Has been really fun trying out P5.JS 
