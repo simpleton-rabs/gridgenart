@@ -3,7 +3,8 @@ function setup() {
   angleMode(DEGREES);
   background(0);
   frameRate(0.5);
-   textFont("Pangolin", 30);
+  // noLoop();
+  textFont("Pangolin", 30);
 }
 
 function draw() {
@@ -17,7 +18,7 @@ function draw() {
     "black",
     "green",
     "white",
-    "grey"
+    "grey",
   ];
 
   //index for colours array set to random point in array
@@ -47,7 +48,7 @@ function draw() {
     "SPACE",
     "BEAUTEOUS",
     "JOY",
-    "ROYGBIV"
+    "ROYGBIV",
   ];
 
   //index for words - set to random number on load
@@ -82,7 +83,7 @@ function draw() {
     "HASHTAG SYMPATHY",
     "GROWTH MINDSET",
     "BLUE SKY THINKING",
-    "EVERYTHING IS A RAINBOW"
+    "EVERYTHING IS A RAINBOW",
   ];
 
   //index for first set of phrases - set to random number on load
@@ -112,7 +113,7 @@ function draw() {
     "SOULS HEARTS MINDS ENTWINED",
     "BETWEEN EAST ANGLIA AND EAST LONDON",
     "DO YOU SEE RED OR DO YOU SEE GREEN?",
-    "OR SOMETHING INBETWEEN SHORTSIGHTED MAN"   
+    "OR SOMETHING INBETWEEN SHORTSIGHTED MAN",
   ];
 
   // index for 2nd set of phrases - set to random number on load
@@ -170,34 +171,44 @@ function draw() {
       resetMatrix();
       phrases1Index += 1;
     }
+    //increment y coordinate for phrases 1
     phrases1Y += recHeight;
+    //to account for drift to right for each iteration
     phrases1X -= 20;
 
     //call colour function again so that right adjacent quadrangles aren't the same colour
     colourChoose(coloursIndex);
-    
+
     //draw right quadrangles
     quad(nquadX1, nquadY1, nquadX2, nquadY2, nquadX3, nquadY3, nquadX4, nquadY4);
-  //increment y values set next loop will draw underneath
+    //increment y values set next loop will draw underneath
     nquadY1 += recHeight + 5;
     nquadY2 += recHeight + 5;
     nquadY3 += recHeight + 5;
     nquadY4 += recHeight + 5;
 
-
-
-
+    // code to place 2nd set of phrases does not work here, text does not appear above the quadrangles so moved to a seperate loop
+    // textAlign(LEFT);
+    // // translate(nquadX1, nquadX2); could not get origin moving to help account for drift with rotation
+    // if (phrases2Index == phrases2.length - 1) {
+    //   rotate(7);
+    //   text(phrases2[phrases2Index], phrases2X, phrases2Y);
+    //   resetMatrix();
+    //   phrases2Index = 0;
+    // } else {
+    //   rotate(7);
+    //   text(phrases2[phrases2Index], phrases2X, phrases2Y);
+    //   resetMatrix();
+    //   phrases2Index += 1;
+    // }
+    // phrases2Y += recHeight;
+    // phrases2X += 15;
   }
 
+  //loop for 2nd set of phrases
 
   for (let i = 0; i < 10; i++) {
-
-
     colourChoose(coloursIndex);
-
-
-    textAlign(LEFT);
-    // translate(nquadX1, nquadX2);4
     if (phrases2Index == phrases2.length - 1) {
       rotate(7);
       text(phrases2[phrases2Index], phrases2X, phrases2Y);
@@ -211,32 +222,8 @@ function draw() {
     }
     phrases2Y += recHeight;
     phrases2X += 15;
-
-    // quad(nquadX1, nquadY1, nquadX2, nquadY2, nquadX3, nquadY3, nquadX4, nquadY4);
-    // nquadY1 += recHeight + 5;
-    // nquadY2 += recHeight + 5;
-    // nquadY3 += recHeight + 5;
-    // nquadY4 += recHeight + 5;
-    // resetMatrix();
-
   }
-// resetMatrix();
-  // fill(black);
-  // textAlign(LEFT);
-  // translate(recWidth + 5, 0);
-  // rotate(-15);
-  // text(phrases1[phrases1Index], 0, quadY1 - recHeight);
-  // resetMatrix();
-  // // rotate(-15);
 
-  // textAlign(LEFT);
-
-  // if (phrases1Index == phrases1.length -1){
-
-  // }
-
-
- 
   function colourChoose() {
     //check if colours index is on last array item
     if (coloursIndex == colours.length - 1) {
@@ -249,45 +236,4 @@ function draw() {
       coloursIndex += 1;
     }
   }
-} 
-
-// let nquadX1 = quadX2 + 20;
-// let nquadY1 = quadY2;
-// let nquadX2 = nquadX1 + 3.5 * recWidth;
-// let nquadY2 = nquadY1 - recHeight;
-// let nquadX3 = nquadX2;
-// let nquadY3 = nquadY1;
-// let nquadX4 = quadX3 + 20;
-// let nquadY4 = quadY3;
-
-// //check if colours index is on last array item
-// if (coloursIndex == colours.length - 1) {
-//   fill(colours[coloursIndex]);
-//   //reset index to 0
-//   coloursIndex = 0;
-//   //otherwise fill colour and add 1 to index to interate through array in sequence
-// } else {
-//   fill(colours[coloursIndex]);
-//   coloursIndex += 1;
-// }
-// textFont('Pangolin-Regular', 30);
-// while (textY < height) {
-//   textFont("Pangolin", 30);
-//   textAlign(CENTER);
-//   text(random(words), recWidth / 2, textY + recHeight / 2);
-//   textY += recHeight + 5;
-// }
-// quadY1 + recHeight;
-// quadY2 = quadY1 - recHeight;
-// quadY3 = quadY1;
-// quadY4 = quadY1 + recHeight;
-// quad(quadX1, quadY1, quadX2, quadY2, quadX3, quadY3, quadX4, quadY4);
-// strokeWeight(50);
-// function placeText(type){
-//   // if (index == length) {
-//     text(type[index], recWidth / 2, recY - recHeight / 2);
-//     // index = 0;
-//   // } else {
-//     // text(type[index], recWidth / 2, recY - recHeight / 2);
-//     // index += 1;
-//   }
+}

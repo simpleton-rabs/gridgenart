@@ -7,7 +7,7 @@ body {
 canvas {
   display: block;
 }
-/* added to css rules as font is not loading on first load */
+/* added to css rules as font is not loading properly on first load */
 *{
   font-family: pangolin;
 }
